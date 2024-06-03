@@ -1,0 +1,40 @@
+stages:          # List of stages for jobs, and their order of execution
+  - build
+  - runner
+  - test
+# build:
+#   image:
+#     name: docker:latest
+#   services:
+#     - docker:dind
+#   script:
+#     - docker version
+#     - docker build -t $CI_REGISTRY_IMAGE:latest .
+#     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+#     - docker push $CI_REGISTRY_IMAGE:latest
+
+# build:
+#   stage: build
+#   image:
+#     name: docker:latest
+#   services:
+#     - docker:dind
+#   script:
+#     - docker version
+#     - docker build -t $CI_REGISTRY_IMAGE:latest .
+#     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+#     - docker push $CI_REGISTRY_IMAGE:latest
+runnner:
+  stage: runner
+  image:
+    name: docker:latest
+  services:
+    - docker:dind
+  script:
+    - docker version
+    # - docker build -t $CI_REGISTRY_IMAGE:latest .
+    # - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker run $CI_REGISTRY_IMAGE:latest  ./test-cli.sh runtime '*'
+    - docker exec -it$CI_REGISTRY_IMAGE:latest  ./test-cli.sh runtime 
+
+# automated-api-tests:
