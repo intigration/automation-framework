@@ -1,8 +1,7 @@
 #!/bin/sh
 ###############################################################################
 #
-# Author: Muhammad Farhan
-#Description: setting up environment for Open-posix on board
+### Author Muhammad Farhan#Description: setting up environment for Open-posix on board
 ###############################################################################
 
 # Setup pre-requisites for open-posix testsuite

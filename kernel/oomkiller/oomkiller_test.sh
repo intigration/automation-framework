@@ -18,8 +18,7 @@
 # Verify the presence of oom_adj and oom_score files for few more running processes under /proc/<PID>/ directory
 # Check the oomkiller is invoked by a process with high badness number
 #
- Author: Muhammad Farhan
-#
+### Author Muhammad Farhan#
 ###############################################################################
 
 #Importing LAVA libraries

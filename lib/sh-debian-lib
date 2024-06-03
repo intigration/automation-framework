@@ -2,7 +2,7 @@
 # Author:  Muhammad Farhan
 
 QA_TMP_DIR="/tmp/$(basename "$0" | cut -d. -f1)"
-QA_SUITES_ROOT=/usr/libexec/ebsy-qa-suites
+QA_SUITES_ROOT=/home/ubuntu/automation-framework
 
 # Checks if a package is installed in the target.
 # Arguments:

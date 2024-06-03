@@ -1,23 +1,6 @@
 #!/bin/sh
 
-#######################################################################################
-#
-# Copyright (c) 2020-2021, Mentor, a Siemens business
-#
-# @file   : usb_helper.sh 
-#
-# @brief  : This test script is helper script for the USB related test-cases
-#
-# @Return : 0 for success and non zero for fail
-#######################################################################################
-#
-# Revision History:
-#
-#  Author                               Modification Date      Description of Changes
-# -------------------------             ----------------       ------------------------
-# Sarath P T  <sarath_pt@mentor.com>    27-08-2021             changed test_case names
-#
-#######################################################################################
+## Author Muhammad Farhan
 
 #Importing LAVA libraries
 . ../lib/sh-test-lib

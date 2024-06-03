@@ -1,7 +1,7 @@
 metadata:
-    name: linux-package
+    name: runtime
     format: "Lava-Test-Shell Test Definition 1.0"
-    description: "linux package test"
+    description: "linux runtime test"
     os:
         - debian
     scope:
@@ -11,7 +11,7 @@ metadata:
 
 run:
     steps:
-        - cd /usr/libexec/ebsy-qa-suites/linux-package
+        - cd /home/ubuntu/automation-framework/runtime
         - adduser/adduser_test.sh
         - apt/apt_test.sh
         - base-files/base_files_test.sh

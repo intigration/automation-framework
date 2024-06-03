@@ -2,7 +2,6 @@
 
 #######################################################################################
 #
-# Copyright (c) 2020-2021, Mentor, a Siemens business
 #
 # @file   : usb_keyboard_detection.sh
 #
@@ -15,8 +14,7 @@
 #
 #  Author                               Modification Date      Description of Changes
 # -------------------------             ----------------       ------------------------
-# Sarath P T  <sarath_pt@mentor.com>    27-08-2021             Initial version
-#
+# Muhammad Farhan
 #######################################################################################
 
 echo "About to run usb keyboard test..."

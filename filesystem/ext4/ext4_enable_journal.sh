@@ -4,8 +4,7 @@
 # DESCRIPTION :
 # Verify for ext4 filesystem journal enable support
 #
- Author: Muhammad Farhan
-#
+ ### Author Muhammad Farhan#
 ###############################################################################
 
 #Importing Lava libraries

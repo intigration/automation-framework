@@ -7,7 +7,7 @@
 # used by the kselftest default with a format which is giving better
 # understanding to the user for analysing the result.
 #
-Author: Muhammad Farhan
+# Author: Muhammad Farhan
 #
 ###############################################################################
 

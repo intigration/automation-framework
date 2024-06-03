@@ -4,8 +4,7 @@
 # DESCRIPTION :
 # Verify for Iozone support of ext4 filesystem
 #
- Author: Muhammad Farhan
-#
+## Author Muhammad Farhan#
 ###############################################################################
 
 #Importing Lava libraries

@@ -11,7 +11,7 @@ metadata:
 
 run:
     steps:
-        - cd /usr/libexec/ebsy-qa-suites/IO
+        - cd /home/ubuntu/automation-framework/IO
         - ./USB/HID/usb_keyboard_detection.sh
         - ./USB/HID/usb_mouse_detection.sh
         - ./USB/Mass-storage/usb_detection.sh

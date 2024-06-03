@@ -7,8 +7,7 @@
 # Verify cpu hotplugging support
 # Dynamically add and remove cpu
 #
-# Author: Muhammad Farhan
-#
+### Author Muhammad Farhan#
 ###############################################################################
 
 #Importing LAVA libraries

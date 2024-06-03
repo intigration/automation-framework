@@ -9,8 +9,7 @@
 # Verify creation of text file / dir at mount point
 # Verify unmounting of ext2 filesystem image
 #
- Author: Muhammad Farhan
-#
+## Author Muhammad Farhan#
 ###############################################################################
 
 #Importing Lava libraries

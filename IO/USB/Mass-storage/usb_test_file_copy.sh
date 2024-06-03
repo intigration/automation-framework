@@ -1,23 +1,5 @@
 #!/bin/bash
-
-#######################################################################################
-#
-# Copyright (c) 2020-2021, Mentor, a Siemens business
-#
-# @file   : usb_test_file_copy.sh
-#
-# @brief  : This test script verifies USB device test file copy on the target.
-#
-# @Return : 0 for success and non zero for fail
-#######################################################################################
-#
-# Revision History:
-#
-#  Author                               Modification Date      Description of Changes
-# -------------------------             ----------------       ------------------------
-# Sarath P T  <sarath_pt@mentor.com>    27-08-2021             Initial version
-#
-#######################################################################################
+## Author Muhammad Farhan
 
 #Import USB helper script
 . USB/Mass-storage/usb_helper.sh

@@ -4,8 +4,7 @@
 # DESCRIPTION :
 #
 # helper script for getting remoteip,hostname,bandwidth and targetip etc..
- Author: Muhammad Farhan
-#
+### Author Muhammad Farhan#
 ###############################################################################
 
 #Get ipv4 address associated with network interface ($1 - 1st argument)

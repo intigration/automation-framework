@@ -1,23 +1,6 @@
 #!/bin/bash
 
-#######################################################################################
-#
-# Copyright (c) 2020-2021, Mentor, a Siemens business
-#
-# @file   : usb_mount_test.sh
-#
-# @brief  : This test script verifies USB device partition mounting on the target
-#
-# @Return : 0 for success and non zero for fail
-#######################################################################################
-#
-# Revision History:
-#
-#  Author                               Modification Date      Description of Changes
-# -------------------------             ----------------       ------------------------
-# Sarath P T  <sarath_pt@mentor.com>    27-08-2021             Changed test-cases names
-#
-#######################################################################################
+## Author Muhammad Farhan
 
 #Importing USB helper script
 . USB/Mass-storage/usb_helper.sh

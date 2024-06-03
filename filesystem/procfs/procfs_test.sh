@@ -13,8 +13,7 @@
 # Verify if /proc/net shows IPv6 support and traffic routed
 # Verify if all/specific memory segments of a PID can be dumped using coredump_filter
 #
- Author: Muhammad Farhan
-#
+### Author Muhammad Farhan#
 ###############################################################################
 
 #Importing Lava libraries
