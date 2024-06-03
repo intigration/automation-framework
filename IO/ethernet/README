@@ -1,0 +1,10 @@
+# Ethernet Test Suite
+
+
+## Preconditions for running ethernet test-cases
+
+* Target and host under test should be passwordless
+* Update below parameters of network_details file present under ethernet folder
+	* RUSER <Username_of_the_remote_host_under_test>
+	* RHOST <ipv4_address_of_the_remote_host_under_test>
+	* RHOSTv6 <ipv6_address_of_the_remote_host_under_test>

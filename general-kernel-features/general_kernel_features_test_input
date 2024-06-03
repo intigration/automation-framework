@@ -1,0 +1,6 @@
+cgroups/cgroups_test.sh
+cpuhotplug/cpuhotplug_test.sh
+smp/smp_test.sh
+hrt/hrt_test.sh
+oomkiller/oomkiller_test.sh
+open-posix/open-posix_test.sh

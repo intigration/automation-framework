@@ -1,0 +1,22 @@
+metadata:
+    name: usb-test
+    format: "Lava-Test-Shell Test Definition 1.0"
+    description: "usb mass storage test"
+    os:
+        - debian
+    scope:
+        - functional
+    devices:
+        - SLLL
+
+run:
+    steps:
+        - cd /usr/libexec/ebsy-qa-suites/IO
+        - ./USB/HID/usb_keyboard_detection.sh
+        - ./USB/HID/usb_mouse_detection.sh
+        - ./USB/Mass-storage/usb_detection.sh
+        - ./USB/Mass-storage/usb_make_fs.sh
+        - ./USB/Mass-storage/usb_mount_test.sh
+        - ./USB/Mass-storage/usb_speed.sh
+        - ./USB/Mass-storage/usb_test_file_copy.sh
+

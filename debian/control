@@ -1,0 +1,13 @@
+Source: automation-framework
+Section: misc
+Priority: optional
+Maintainer: Muhammad Farhan
+Standards-Version: 3.9.6
+
+Package: automation-framework
+Architecture: all
+Depends: build-essential, curl, devscripts, dbus, dh-exec, dpkg-dev,
+ ethtool, equivs, expect, gperf, groff, iozone3, iperf, libcap-ng-dev, libcap-ng-utils,
+ libgtk-3-dev, libpopt-dev, linux-perf, net-tools, ping, python3-dev, python3-pip, rsync,
+ socat, texinfo, wget
+Description: A collection of LAVA based test cases for Super Long Life Linux project

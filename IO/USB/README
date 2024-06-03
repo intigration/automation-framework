@@ -1,0 +1,20 @@
+USB TEST SUITE
+---------------
+This repo contains automated test for USB test-scripts
+
+
+Hardware Requirements for this test suite:
+1. Test Board
+2. USB HUB
+3. USB device(2.0)
+4. USB device(3.0)
+5. Card Reader with 1 SDCard
+
+
+Please Note:
+1. A HUB should be directly connected to target board and all devices should be connected through USB hub.
+2. Minimum requirment to pass all testcases.
+-> USB 3.0 1 Unit
+-> USB 2.0 1 Unit
+-> SDCard 1 Unit
+3. USB3/USB2 must having only 1 partition in it, and properly formatted and Sdcard must having 2 partition with properly formatted.

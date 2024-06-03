@@ -1,0 +1,104 @@
+#!/bin/sh
+# Author:  Muhammad Farhan
+
+QA_TMP_DIR="/tmp/$(basename "$0" | cut -d. -f1)"
+QA_SUITES_ROOT=/usr/libexec/ebsy-qa-suites
+
+# Checks if a package is installed in the target.
+# Arguments:
+#       - package name
+check_if_package_installed() {
+	local status=$(dpkg-query -f '${db:Status-Status}' --show "$1"  2>/dev/null || true)
+	if [ "${status}" = "installed" ]; then
+		echo "$1 is installed"
+		return 0
+	else
+		echo "$1 is not installed"
+		return 1
+	fi
+}
+
+# Install build dependencies for a package.
+# Arguments:
+#       - package name
+install_builddeps() {
+	local apt_cmd="apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends -y"
+	mk-build-deps "${1}" --install --remove -t "${apt_cmd}"
+}
+
+# Remove  build dependencies of a package.
+# Arguments:
+#       - package name
+remove_builddeps() {
+	apt-get remove -y "${1}-build-deps"
+}
+
+# Check if a kernel config is a module
+# Arguments:
+#       - kernel config name
+is_config_module() {
+	local config_type=""
+	if [ -f /proc/config.gz ]; then
+		config_type=$(zcat /proc/config.gz | grep -w ^${1} | cut -sd '=' -f2)
+	elif [ -f /boot/config-`uname -r` ]; then
+		config_type=$(cat /boot/config-$(uname -r) | grep -w ^${1} | cut -sd '=' -f2)
+	fi
+	if [ "${config_type}" = "m" ];then
+		return 0
+	fi
+	return 1
+}
+
+# Check if a kernel config is enabled in /proc/config.gz
+# Arguments:
+#       - kernel config name
+check_proc_config() {
+	local enabled=$(zcat /proc/config.gz | grep -w ^${1} | cut -sd '=' -f2)
+	if [ -n "${enabled}" ]; then
+		return 0
+	else
+		return 1
+	fi
+}
+
+# Check if a kernel config is enabled in /boot/config*
+# Arguments:
+#       - kernel config name
+check_boot_config() {
+	local enabled=$(cat /boot/config-$(uname -r) | grep -w ^${1} | cut -sd '=' -f2)
+	if [ -n "${enabled}" ]; then
+		return 0
+	else
+		return 1
+	fi
+}
+
+# Check if a kernel config is enabled.
+# By default checks in /proc/config.gz and if that is not present, it falls back to /boot/config*
+# If both are not present returns 2 as error code.
+# Arguments:
+#       - kernel config name
+check_kernel_config() {
+	if [ -f /proc/config.gz ]; then
+		check_proc_config "${1}"
+	elif [ -f /boot/config-`uname -r` ]; then
+		check_boot_config "${1}"
+	else
+		return 2
+	fi
+	return $?
+}
+
+# Create a temporary directory in /tmp
+create_tmp_dir() {
+	mkdir -p $QA_TMP_DIR
+	if [ -d "$QA_TMP_DIR" ]; then
+		return 0
+	fi
+	return 1
+}
+
+# Remove the temporarty directory
+remove_tmp_dir() {
+	rm -rf $QA_TMP_DIR
+}

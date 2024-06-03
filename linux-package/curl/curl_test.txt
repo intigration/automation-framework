@@ -1,0 +1,4 @@
+http://xmlsoft.org/examples/index.html
+http://xmlsoft.org/index.html
+http://xmlsoft.org/guidelines.html
+http://xmlsoft.org/ChangeLog.html

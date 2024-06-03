@@ -1,0 +1,65 @@
+#!/bin/sh
+###############################################################################
+#
+# Author: Muhammad Farhan
+#Description: setting up environment for Open-posix on board
+###############################################################################
+
+# Setup pre-requisites for open-posix testsuite
+setup() {
+# Define suite path
+    suite_path="$QA_TMP_DIR/open_posix_testsuite"
+    mkdir -p $suite_path
+# Define ltp version
+    LTP_VERSION=20210121
+    cd $QA_TMP_DIR
+# Get open_posix_testsuite from ltp
+    wget https://github.com/linux-test-project/ltp/releases/download/"${LTP_VERSION}"/ltp-full-"${LTP_VERSION}".tar.xz
+    tar -xvf ltp-full-"${LTP_VERSION}".tar.xz
+    cp -r ltp-full-"${LTP_VERSION}"/testcases/open_posix_testsuite/* $suite_path
+}
+
+# Check Open-posix test suites available on target
+suite_path_check() {
+    echo "Checking Open-posix test suites available on target"
+    if [ -d "$suite_path" ]; then
+        echo "$suite_path exists."
+    else
+        echo "suite path does not exists."
+        exit 1
+    fi
+}
+
+# Clean make file
+clean_make() {
+	echo "Cleaning up make file"
+	if [ -d "$suite_path" ]; then
+		cd $suite_path
+		make clean
+		RC=$?
+	fi
+
+	if [ "$RC" -eq '0' ]; then
+		echo "make clean executed successfully"
+	else
+		echo "Failed to clean make"
+		return 1
+	fi
+}
+
+# Generate generic POSIX compliant Makefiles.
+generate_makefile() {
+	echo "Generate generic POSIX compliant Makefiles."
+	if [ -d "$suite_path" ]; then
+		cd $suite_path
+		make generate-makefiles && make all
+		RC=$?
+	fi
+
+	if [ "$RC" -eq '0' ]; then
+		echo "Open-posix makefile generated successfully"
+	else
+		echo "Failed to generate open-posix makefile"
+		return 1
+	fi
+}

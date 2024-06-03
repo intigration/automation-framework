@@ -1,0 +1,81 @@
+metadata:
+    name: linux-package
+    format: "Lava-Test-Shell Test Definition 1.0"
+    description: "linux package test"
+    os:
+        - debian
+    scope:
+        - functional
+    devices:
+        - SLLL
+
+run:
+    steps:
+        - cd /usr/libexec/ebsy-qa-suites/linux-package
+        - adduser/adduser_test.sh
+        - apt/apt_test.sh
+        - base-files/base_files_test.sh
+        - base-passwd/base_passwd_test.sh
+        - bash/bash_test.sh
+        - bsdutils/bsdutils_test.sh
+        - coreutils/coreutils_test.sh
+        - cpio/cpio_test.sh
+        - dash/dash_test.sh
+        - dbus/dbus_test.sh
+        - debconf/debconf_test.sh
+        - debian-archive-keyring/debian-archive-keyring_test.sh
+        - debianutils/debianutils_test.sh
+        - diffutils/diffutils_test.sh
+        - dmsetup/dmsetup_test.sh
+        - dpkg/dpkg_test.sh
+        - e2fslibs/e2fslibs_test.sh
+        - findutils/findutils_test.sh
+        - fuse/fuse_test.sh
+        - gcc/gcc_test.sh
+        - gpgv/gpgv_test.sh
+        - grep/grep_test.sh
+        - gzip/gzip_test.sh
+        - hostname/hostname_test.sh
+        - initramfs-tools-core/initramfs-tools-core_test.sh
+        - initramfs-tools/initramfs-tools_test.sh
+        - init-system-helpers/init-system-helpers_test.sh
+        - iproute2/iproute_test.sh
+        - isc-dhcp-client/isc-dhcp-client_test.sh
+        - keyutils/keyutils_test.sh
+        - klibc-utils/klibc_utils_test.sh
+        - kmod/kmod_test.sh
+        - libacl1/libacl1_test.sh
+        - linux-base/linux_base_test.sh
+        - locales/locales_test.sh
+        - login/login_test.sh
+        - lsb-base/lsb_base_test.sh
+        - lsof/lsof_test.sh
+        - mawk/mawk_test.sh
+        - mount/mount_test.sh
+        - mtd-utils/mtd_utils_test.sh
+        - multiarch-support/multiarch-support_test.sh
+        - ncurses-base/ncurses-base_test.sh
+        - ncurses-bin/ncurses-bin_test.sh
+        - ntfs-3g/ntfs-3g_test.sh
+        - openssl/openssl_test.sh
+        - passwd/passwd_test.sh
+        - pciutils/pciutils_test.sh
+        - perl-base/perl-base_test.sh
+        - procps/procps_test.sh
+        - psmisc/psmisc_test.sh
+        - sed/sed_test.sh
+        - sensible-utils/sensible-utils_test.sh
+        - systemd/systemd_test.sh
+        - systemd-sysv/systemd-sysv_test.sh
+        - sysvinit-utils/sysvinit-utils_test.sh
+        - tar/tar_test.sh
+        - tzdata/tzdata_test.sh
+        - ucf/ucf_test.sh
+        - udev/udev_test.sh
+        - usbutils/usbutils_test.sh
+        - util-linux/util-linux_test.sh
+        - zlib1g/zlib1g_test.sh
+        - openssh/openssh_test.sh
+        - libxml2/libxml2_test.sh
+        - curl/curl_test.sh
+        - ca-certificates/ca_certificates_test.sh

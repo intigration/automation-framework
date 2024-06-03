@@ -1,0 +1,37 @@
+The Open POSIX* Test Suite is an open source test suite with the goal of performing
+conformance,functional,stress,and performance testing of the functions described
+in the IEEE Std 1003.1-2001 System Interfaces specification.
+Eventual testing of the full specification is desired.
+
+Open-POSIX TestSuite source is available on ltp(linux test project) under /testcases/open_posix_testsuite
+
+How to Compile and run test:
+e.g:
+
+i)Go to open_posix_testsuite directory.
+
+#cd /opt/ltp/testcases/open_posix_testsuite/
+
+ii)Generate generic POSIX compliant Makefiles.
+
+#make generate-makefiles
+
+iii)To just build conformance tests,run:
+
+#make conformance-all
+
+iv)To just runconformance tests,run:
+
+#make conformance-test
+
+Note:If you find "ERROR: ../../../bin/t0 doesn't exist / isn't executable"  error
+while running the test,to resolve this just create t0 file under "/opt/ltp/testcases/open_posix_testsuite/bin" path.
+
+e.g.
+# touch t0
+
+Test Number:
+
+conformance test: 1717(aprox.)
+Stress test     : 3
+Functional test : 17

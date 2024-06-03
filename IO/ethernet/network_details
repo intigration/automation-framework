@@ -1,0 +1,15 @@
+#This file contains Host/server details like,usser name, IPv4 address,IPv6 address
+#Lines starting with "Hash" will not be considered. Make sure you give space/tab between key and value.
+
+#Please provide the user name of the remote host,e.g: RUSER root
+RUSER workermel
+##Please provide the IPv4 addredd of the remote host,e.g: RHOST 137.202.156.62
+RHOST 134.86.254.10
+##Please provide the IPv6 addredd of the remote host,e.g: RHOSTv6 fe80::221:9bff:fea5:2ca4
+RHOSTv6 fe80::f21f:afff:fe3e:8d08
+#Different host IPs from different network
+SUBNET_IP1=134.86.61.12
+
+SUBNET_IP2=134.86.104.1
+
+SUBNET_IP3=134.86.60.40

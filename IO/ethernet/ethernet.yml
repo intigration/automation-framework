@@ -1,0 +1,15 @@
+metadata:
+    name: ethernet
+    format: "Lava-Test-Shell Test Definition 1.0"
+    description: "ethernet test"
+    os:
+        - debian
+    scope:
+        - functional
+    devices:
+        - SLLL
+
+run:
+    steps:
+        - cd /usr/libexec/ebsy-qa-suites/IO
+        - ./ethernet/ethernet_test.sh

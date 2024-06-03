@@ -1,0 +1,27 @@
+metadata:
+    name: filesystem
+    format: "Lava-Test-Shell Test Definition 1.0"
+    description: "filesystem test"
+    os:
+        - debian
+    scope:
+        - functional
+    devices:
+        - SLLL
+
+run:
+    steps:
+        - cd /usr/libexec/ebsy-qa-suites/filesystem
+        - ext2/ext2_test.sh
+        - ext2/ext2_e2fsprogs_test.sh
+        - ext2/ext2_iozone.sh
+        - ext3/ext3_test.sh
+        - ext3/ext3_iozone.sh
+        - ext4/ext4_test.sh
+        - ext4/ext4_disable_journal.sh
+        - ext4/ext4_enable_journal.sh
+        - ext4/ext4_iozone.sh
+        - procfs/procfs_test.sh
+        - tmpfs/tmpfs_test.sh
+        - devtmpfs/devtmpfs_test.sh
+        - sysfs/sysfs_test.sh

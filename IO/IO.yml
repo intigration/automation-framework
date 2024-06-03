@@ -1,0 +1,16 @@
+metadata:
+    name: IO
+    format: "Lava-Test-Shell Test Definition 1.0"
+    description: "IO test"
+    os:
+        - debian
+    scope:
+        - functional
+    devices:
+        - SLLL
+
+run:
+    steps:
+        - cd /usr/libexec/ebsy-qa-suites/IO
+        - ethernet/ethernet_test.sh
+        - if [ $(uname -m) = "x86_64" ]; then watchdog/watchdog_test.sh; fi
