@@ -185,8 +185,8 @@ echo "You are in: "$PWD
 sh=$(which $SHELL)
 # exec $sh
 
-#############
-SERVER HEALTH
+###############
+#SERVER HEALTH
 #################
 function heath () {
 
@@ -244,10 +244,10 @@ usage()
 }
 
 case  "$1" in
-    linux-package)
+    runtime)
         echo "verifying all the debian packages installed on system"
 	    echo "*****************************\n"
-	    Total_test=`wc -l linux-package/debian_package_input_file | cut -d " " -f1`
+	    Total_test=`wc -l runtime/debian_package_input_file | cut -d " " -f1`
 	    cd "$1"
 	    for i in `cat debian_package_input_file`; do ./$i | tee -a $TEST_RESULTS  ; done    
         
@@ -262,10 +262,10 @@ case  "$1" in
 
         ;;
 
-    general-kernel-features)
+    kernel)
 	    echo "Executing all Kernel testcases on system"
         echo "*****************************\n"
-        Total_test=`wc -l general-kernel-features/general_kernel_features_test_input | cut -d " " -f1`
+        Total_test=`wc -l kernel/general_kernel_features_test_input | cut -d " " -f1`
         cd "$1"
         for i in `cat general_kernel_features_test_input`; do ./$i | tee -a $TEST_RESULTS  ; done
 
@@ -312,13 +312,13 @@ get_count_skip()
 }
 
 # To get list of passed testcases
-get_testcases_pass()
+get_ok_results()
 {
     cat $TEST_RESULTS | grep -i "test passed$" || cat $TEST_RESULTS | grep -i "RESULT=pass" | awk '{print $2,$3}' | cut -d ">" -f1
 }
 
 # To get list of failed testcases
-get_testcase_fail()
+get_failed_results()
 {
     cat $TEST_RESULTS | grep -i "test failed$" || cat $TEST_RESULTS | grep -i "RESULT=fail" | awk '{print $2,$3}' | cut -d ">" -f1
 }
@@ -332,7 +332,7 @@ get_testcase_skip()
 echo "\n Test Summary Report:"
 echo  "*****************************\n"
 
-echo "Total number of Linux debian packages those are tested: $Total_test\n"
+echo "Total number of Linux debian packages those are tested: $Total_test \n"
 echo "Total number of Linux debian packages those are Passed: $(get_ok_results)"
 echo "Total number of Linux debian packages those are Failed: $(get_failed_results)"
 echo "Total number of Linux debian packages those are Skipped: $(get_count_skip)"
@@ -340,10 +340,10 @@ echo "Total number of Linux debian packages those are Skipped: $(get_count_skip)
 echo "*****************************\n"
 echo "=============Detail Lists==================\n"
 echo "List of testcases passed:\n"
-get_testcases_pass
+get_ok_results
 
 echo "List of testcases failed:\n"
-get_testcase_fail
+get_failed_results
 
 echo "List of testcases skipped:\n"
 get_testcase_skip

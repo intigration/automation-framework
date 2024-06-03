@@ -11,5 +11,5 @@ metadata:
 
 run:
     steps:
-        - cd /usr/libexec/ebsy-qa-suites/external
+        - cd /home/ubuntu/automation-framework/external
         - kselftest/kselftest_result.sh

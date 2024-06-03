@@ -11,7 +11,7 @@ metadata:
 
 run:
     steps:
-        - cd /usr/libexec/ebsy-qa-suites/filesystem
+        - cd /home/ubuntu/automation-framework/filesystem
         - ext2/ext2_test.sh
         - ext2/ext2_e2fsprogs_test.sh
         - ext2/ext2_iozone.sh

@@ -1,7 +1,7 @@
-lib/* /usr/libexec/ebsy-qa-suites/lib/
-linux-package/* /usr/libexec/ebsy-qa-suites/linux-package/
-utils/* /usr/libexec/ebsy-qa-suites/utils/
-general-kernel-features/* /usr/libexec/ebsy-qa-suites/general-kernel-features/
-filesystem/* /usr/libexec/ebsy-qa-suites/filesystem/
-IO/* /usr/libexec/ebsy-qa-suites/IO/
-external/* /usr/libexec/ebsy-qa-suites/external/
+lib/* /home/ubuntu/automation-framework/lib/
+runtime/* /home/ubuntu/automation-framework/runtime/
+utils/* /home/ubuntu/automation-framework/utils/
+kernel/* /home/ubuntu/automation-framework/kernel/
+filesystem/* /home/ubuntu/automation-framework/filesystem/
+IO/* /home/ubuntu/automation-framework/IO/
+external/* /home/ubuntu/automation-framework/external/

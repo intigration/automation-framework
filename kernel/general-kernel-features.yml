@@ -1,0 +1,20 @@
+metadata:
+    name: kernel
+    format: "Lava-Test-Shell Test Definition 1.0"
+    description: "general kernel features test"
+    os:
+        - debian
+    scope:
+        - functional
+    devices:
+        - SLLL
+
+run:
+    steps:
+        - cd /home/ubuntu/automation-framework/kernel
+        - cpuhotplug/cpuhotplug_test.sh
+        - smp/smp_test.sh
+        - hrt/hrt_test.sh
+        - oomkiller/oomkiller_test.sh
+        - cgroups/cgroups_test.sh
+        - open-posix/open-posix_test.sh

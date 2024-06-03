@@ -11,5 +11,5 @@ metadata:
 
 run:
     steps:
-        - cd /usr/libexec/ebsy-qa-suites/IO
+        - cd /home/ubuntu/automation-framework/IO
         - ./ethernet/ethernet_test.sh
