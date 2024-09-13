@@ -15,7 +15,7 @@ RUN npm install -g newman newman-reporter-html newman-reporter-htmlextra
 
 # WORKDIR /app
 
-CMD ["./dev.sh"]
+CMD ["./test-cli.sh"]
 
 # CMD ["gunicorn", "-b", "0.0.0.0:5000", "run:app"]
 
